@@ -74,3 +74,17 @@ let income = companies.reduce((profits, company) => {
 }, {});
 
 console.table(income);
+
+
+
+for (let item of companies) {
+    let summa = 0
+    for (let a = 0; a < item.expenses.length; a++) {
+        summa = summa + item.expenses[a]
+    }
+    console.log(summa);
+    item.budget = item.budget - (item.tax * item.budget / 100) - summa;
+    console.log(item);
+}
+
+
